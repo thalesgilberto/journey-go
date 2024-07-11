@@ -46,7 +46,7 @@ func run(ctx context.Context) error {
 	logger = logger.Named("journey_app")
 	defer func() { _ = logger.Sync() }()
 
-	if err := godotenv.Load(".env-development"); err != nil {
+	if err := godotenv.Load(); err != nil {
 		logger.Error("Error loading .env file", zap.Error(err))
 	}
 
